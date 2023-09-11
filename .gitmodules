@@ -1,0 +1,6 @@
+[submodule "Orion/vendor/GLFW"]
+	path = Orion/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
+[submodule "Orion/vendor/spdlog"]
+	path = Orion/vendor/spdlog
+	url = https://github.com/gabime/spdlog
