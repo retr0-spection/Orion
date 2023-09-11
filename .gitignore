@@ -3,3 +3,4 @@ Orion/Orion.xcworkspace/
 Sandbox/Sandbox.xcodeproj/
 *.xcworkspace/
 *.xcodeproj/
+.DS_Store
