@@ -1,3 +1,5 @@
 bin/
-*.xcworkspace/
+Orion/Orion.xcworkspace/
+Sandbox/Sandbox.xcodeproj/
+*.xworkspace/
 *.xcodeproj/
