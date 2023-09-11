@@ -1,4 +1,8 @@
 #pragma once
+#include "Core.hpp"
+#include "Events/Event.hpp"
+#include "Window.hpp"
+
 
 
 namespace Orion {
@@ -9,6 +13,9 @@ namespace Orion {
         virtual ~Application();
         
         void Run();
+    private:
+        std::unique_ptr<Window> m_Window;
+        bool m_Running = true;
     
     };
     

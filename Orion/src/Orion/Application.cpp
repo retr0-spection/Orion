@@ -3,10 +3,11 @@
 #include "Orion/Events/ApplicationEvent.hpp"
 #include "Orion/Log.hpp"
 
+
 namespace Orion {
     Application::Application()
     {
-        
+        m_Window = std::unique_ptr<Window>(Window::Create());
     }
 
     Application::~Application()
@@ -16,15 +17,9 @@ namespace Orion {
 
     void Application::Run()
     {
-        WindowResizeEvent e(1200, 700);
-        if (e.IsInCategory(EventCategoryApplication)){
-            ORI_TRACE(e);
+        while (m_Running){
+            m_Window->OnUpdate();
         }
-        if (e.IsInCategory(EventCategoryInput)){
-            ORI_TRACE(e);
-        }
-
-        while (true);
     }
 
 

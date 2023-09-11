@@ -13,6 +13,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 cppdialect "C++20"
 
+
+includeDir = {}
+includeDir['GLFW'] = "Orion/vendor/GLFW/include"
+include "Orion/vendor/GLFW"
+
 project "Orion"
     location "Orion"
     kind "SharedLib"
@@ -34,7 +39,17 @@ project "Orion"
     externalincludedirs
     {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{includeDir.GLFW}"
+    }
+
+    links {
+        "GLFW",
+        "OpenGL.framework",
+        "Cocoa.framework",
+        "IOKit.framework",
+        "CoreVideo.framework",
+
     }
 
     filter "system:Mac"
@@ -70,7 +85,7 @@ project "Orion"
             "ORI_BUILD_DLL",
             "DEBUG",
             "ORI_PLATFORM_MAC",
-            "ORI_DEBUG"
+            "ORI_DEBUG",
 
         }
         symbols "On"
