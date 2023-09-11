@@ -1,6 +1,7 @@
 #pragma once
 #include "Core.hpp"
-#include "Events/Event.hpp"
+#include "Orion/Events/Event.hpp"
+#include "Orion/Events/ApplicationEvent.hpp"
 #include "Window.hpp"
 
 
@@ -13,7 +14,11 @@ namespace Orion {
         virtual ~Application();
         
         void Run();
+        
+        void OnEvent(Event& e);
     private:
+        bool OnWindowClose(WindowCloseEvent& e);
+        
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
     
