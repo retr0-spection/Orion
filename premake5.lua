@@ -17,9 +17,11 @@ cppdialect "C++20"
 includeDir = {}
 includeDir['GLFW'] = "Orion/vendor/GLFW/include"
 includeDir['Glad'] = "Orion/vendor/Glad/include"
+includeDir['ImGui'] = "Orion/vendor/imgui/include"
 
 include "Orion/vendor/GLFW"
 include "Orion/vendor/Glad"
+include "Orion/vendor/imgui"
 
 project "Orion"
     location "Orion"
@@ -45,11 +47,13 @@ project "Orion"
         "%{prj.name}/vendor/spdlog/include",
         "%{includeDir.GLFW}",
         "%{includeDir.Glad}",
+        "%{includeDir.ImGui}",
     }
 
     links {
         "GLFW",
         "Glad",
+        "ImGui",
         "OpenGL.framework",
         "Cocoa.framework",
         "IOKit.framework",
