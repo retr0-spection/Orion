@@ -4,6 +4,3 @@
 [submodule "Orion/vendor/spdlog"]
 	path = Orion/vendor/spdlog
 	url = https://github.com/gabime/spdlog
-[submodule "Orion/vendor/imgui"]
-	path = Orion/vendor/imgui
-	url = https://github.com/retr0-spection/imgui
