@@ -17,7 +17,7 @@ cppdialect "C++20"
 includeDir = {}
 includeDir['GLFW'] = "Orion/vendor/GLFW/include"
 includeDir['Glad'] = "Orion/vendor/Glad/include"
-includeDir['ImGui'] = "Orion/vendor/imgui/include"
+includeDir['ImGui'] = "Orion/vendor/imgui"
 
 include "Orion/vendor/GLFW"
 include "Orion/vendor/Glad"

@@ -6,6 +6,7 @@
 #include "Orion/Log.hpp"
 #include "Orion/Core.hpp"
 #include "Orion/Layer.hpp"
+#include "Orion/ImGui/ImGuiLayer.hpp"
 
 // ---Entry point------------------
 #include "Orion/EntryPoint.hpp"
