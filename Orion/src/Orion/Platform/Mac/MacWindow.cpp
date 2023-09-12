@@ -3,6 +3,8 @@
 #include "Orion/Events/MouseEvent.hpp"
 #include "Orion/Events/ApplicationEvent.hpp"
 #include "Orion/Events/KeyEvent.hpp"
+#include <glad/glad.h>
+
 
 namespace Orion {
 
@@ -45,6 +47,8 @@ namespace Orion {
         
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        ORI_CORE_ASSERT(success, "Could not initialize Glad!");
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
         

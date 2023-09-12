@@ -16,7 +16,10 @@ cppdialect "C++20"
 
 includeDir = {}
 includeDir['GLFW'] = "Orion/vendor/GLFW/include"
+includeDir['Glad'] = "Orion/vendor/Glad/include"
+
 include "Orion/vendor/GLFW"
+include "Orion/vendor/Glad"
 
 project "Orion"
     location "Orion"
@@ -40,11 +43,13 @@ project "Orion"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{includeDir.GLFW}"
+        "%{includeDir.GLFW}",
+        "%{includeDir.Glad}",
     }
 
     links {
         "GLFW",
+        "Glad",
         "OpenGL.framework",
         "Cocoa.framework",
         "IOKit.framework",
@@ -55,13 +60,15 @@ project "Orion"
     filter "system:Mac"
         staticruntime "On"
         systemversion "latest"
+        
 
 
         defines
         {
             "ORI_BUILD_DLL",
             "DEBUG",
-            "ORI_PLATFORM_MAC"
+            "ORI_PLATFORM_MAC",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
@@ -74,7 +81,8 @@ project "Orion"
         {
             "ORI_BUILD_DLL",
             "ORI_PLATFORM_MAC",
-            "ORI_RELEASE"
+            "ORI_RELEASE",
+            "GLFW_INCLUDE_NONE"
 
         }
         symbols "On"
@@ -86,6 +94,7 @@ project "Orion"
             "DEBUG",
             "ORI_PLATFORM_MAC",
             "ORI_DEBUG",
+            "GLFW_INCLUDE_NONE"
 
         }
         symbols "On"
@@ -96,7 +105,8 @@ project "Orion"
             "ORI_BUILD_DLL",
             "DEBUG",
             "ORI_PLATFORM_MAC",
-            "ORI_DIST"
+            "ORI_DIST",
+            "GLFW_INCLUDE_NONE"
         }
         optimize "On"
 
