@@ -11,7 +11,7 @@ public:
     
     void OnUpdate() override
     {
-        ORI_INFO("ExampleLayer::Update");
+//        ORI_INFO("ExampleLayer::Update");
     }
     
     void OnEvent(Orion::Event& event) override

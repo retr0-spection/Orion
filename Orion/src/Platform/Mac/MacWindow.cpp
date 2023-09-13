@@ -53,6 +53,7 @@ namespace Orion {
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.2+ only
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // Required on Mac
 
+
         
         m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
@@ -140,6 +141,7 @@ namespace Orion {
             WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
             
             MouseMovedEvent event((float)xPos, (float)yPos);
+            ORI_CORE_TRACE("mouse pos: {0}, {1}", xPos, yPos);
             data.EventCallback(event);
             
         });

@@ -54,7 +54,9 @@ namespace Orion {
     {
         while (m_Running){
             for (Layer* layer : m_LayerStack)
+            {
                 layer->OnUpdate();
+            }
             
             m_Window->OnUpdate();
         }
